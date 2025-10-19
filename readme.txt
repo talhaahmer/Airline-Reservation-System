@@ -7,8 +7,8 @@ Password --- admin
 ////////
 User
 
-Email --- shaheer@gmail.com
-Password ---shaheer
+Email --- talha@gmail.com
+Password --- talha
 
 
 Database Name --- airlines
