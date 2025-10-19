@@ -1,0 +1,200 @@
+﻿@model airlines.Models.Flight
+
+@{
+    ViewData["Title"] = "Add Flight";
+    Layout = "~/Views/Shared/_Layout1(admin).cshtml";
+}
+
+<style>
+    body {
+        background-color: #f4f6f9;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-title {
+        text-align: center;
+        font-size: 2.3rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        letter-spacing: 0.5px;
+    }
+
+    .styled-hr {
+        width: 70px;
+        height: 4px;
+        background-color: #D72638;
+        border: none;
+        border-radius: 3px;
+        margin: 0 auto 30px;
+    }
+
+    .form-container {
+        max-width: 600px;
+        margin: 0 auto 40px auto;
+        padding: 35px;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        font-weight: 600;
+        color: #333;
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        width: 100%;
+        height: 45px;
+        padding: 10px 14px;
+        font-size: 1rem;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        background-color: #f9fafb;
+        color: #000 !important;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+    .form-control:focus {
+        border-color: #D72638;
+        box-shadow: 0 0 0 0.15rem rgba(215, 38, 56, 0.2);
+        outline: none;
+    }
+
+    .btn-custom {
+        width: 100%;
+        padding: 12px;
+        font-size: 1.1rem;
+        background-color: #D72638;
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-custom:hover {
+        background-color: #b61f2d;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 15px rgba(215, 38, 56, 0.4);
+    }
+
+    .text-danger {
+        font-size: 0.9rem;
+        color: #dc3545;
+        margin-top: 4px;
+    }
+
+    .back-link {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .back-link a {
+        display: inline-block;
+        padding: 12px 20px;
+        background-color: #f1f1f1;
+        color: #D72638;
+        font-weight: 600;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .back-link a:hover {
+        background-color: #e6e6e6;
+        color: #b61f2d;
+        transform: translateY(-1px);
+    }
+</style>
+
+<!-- Page Heading -->
+<h1 class="page-title">Add New Flight</h1>
+<hr class="styled-hr" />
+
+<!-- Form Section -->
+<div class="form-container">
+    <form asp-action="AddFlight">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <!-- Flight Number -->
+        <div class="form-group">
+            <label asp-for="FlightNumber">Flight Number</label>
+            <input asp-for="FlightNumber" class="form-control" />
+            <span asp-validation-for="FlightNumber" class="text-danger"></span>
+        </div>
+
+        <!-- Origin City -->
+        <div class="form-group">
+            <label asp-for="OriginCity">Origin City</label>
+            <select asp-for="OriginCity" class="form-control" asp-items="ViewBag.OriginCity"></select>
+        </div>
+
+        <!-- Destination City -->
+        <div class="form-group">
+            <label asp-for="DestinationCity">Destination City</label>
+            <select asp-for="DestinationCity" class="form-control" asp-items="ViewBag.DestinationCity"></select>
+        </div>
+
+        <!-- Departure Time -->
+        <div class="form-group">
+            <label asp-for="DepartureTime">Departure Time</label>
+            <input asp-for="DepartureTime" class="form-control" />
+            <span asp-validation-for="DepartureTime" class="text-danger"></span>
+        </div>
+
+        <!-- Arrival Time -->
+        <div class="form-group">
+            <label asp-for="ArrivalTime">Arrival Time</label>
+            <input asp-for="ArrivalTime" class="form-control" />
+            <span asp-validation-for="ArrivalTime" class="text-danger"></span>
+        </div>
+
+        <!-- Duration -->
+        <div class="form-group">
+            <label asp-for="Duration">Duration</label>
+            <input asp-for="Duration" class="form-control" />
+            <span asp-validation-for="Duration" class="text-danger"></span>
+        </div>
+
+        <!-- Base Price -->
+        <div class="form-group">
+            <label asp-for="BasePrice">Base Price (PKR)</label>
+            <input asp-for="BasePrice" class="form-control" />
+            <span asp-validation-for="BasePrice" class="text-danger"></span>
+        </div>
+
+        <!-- Available Seats -->
+        <div class="form-group">
+            <label asp-for="AvailableSeats">Available Seats</label>
+            <input asp-for="AvailableSeats" class="form-control" />
+            <span asp-validation-for="AvailableSeats" class="text-danger"></span>
+        </div>
+
+        <!-- Date -->
+        <div class="form-group">
+            <label asp-for="Date">Flight Date</label>
+            <input asp-for="Date" class="form-control" />
+            <span asp-validation-for="Date" class="text-danger"></span>
+        </div>
+
+        <!-- Submit -->
+        <div class="form-group">
+            <input type="submit" value="Create Flight" class="btn-custom" />
+        </div>
+    </form>
+</div>
+
+<!-- Back Link -->
+<div class="back-link">
+    <a asp-action="Index">← Back to Flight List</a>
+</div>

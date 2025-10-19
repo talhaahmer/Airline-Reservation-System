@@ -1,0 +1,147 @@
+﻿@model airlines.Models.Flight
+
+@{
+    ViewData["Title"] = "Delete Flight";
+    Layout = "~/Views/Shared/_Layout1(admin).cshtml";
+}
+
+<style>
+    body {
+        background-color: #f9fafb;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .delete-container {
+        max-width: 700px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 40px 35px;
+        border-radius: 14px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .delete-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: #D72638;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .delete-subtitle {
+        font-size: 1.2rem;
+        color: #444;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .scrollable-details {
+        max-height: 450px;
+        overflow-y: auto;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        background: #fafafa;
+    }
+
+    dl.row dt {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 8px;
+    }
+
+    dl.row dd {
+        margin-bottom: 18px;
+        color: #555;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .btn-danger {
+        background-color: #D72638;
+        border: none;
+        color: #fff;
+        font-weight: 600;
+        padding: 12px 30px;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .btn-danger:hover {
+            background-color: #b61f2d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(215, 38, 56, 0.3);
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        color: #fff;
+        font-weight: 600;
+        padding: 12px 30px;
+        font-size: 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .btn-secondary:hover {
+            background-color: #565e64;
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: #fff;
+        }
+</style>
+
+<div class="delete-container">
+    <h1 class="delete-title">Delete Flight</h1>
+    <p class="delete-subtitle">Are you sure you want to permanently remove this flight from the system?</p>
+
+    <div class="scrollable-details">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FlightNumber)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.FlightNumber)</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DepartureTime)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DepartureTime)</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.ArrivalTime)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.ArrivalTime)</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Duration)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Duration)</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.BasePrice)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.BasePrice)</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.AvailableSeats)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.AvailableSeats)</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Date)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Date)</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DestinationCityNavigation)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DestinationCityNavigation.Id)</dd>
+
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.OriginCityNavigation)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.OriginCityNavigation.Id)</dd>
+        </dl>
+    </div>
+
+    <form asp-action="DeleteFlights" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn-danger" />
+        <a asp-action="ShowFlights" class="btn-secondary">Back to List</a>
+    </form>
+</div>

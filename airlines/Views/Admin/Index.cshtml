@@ -1,0 +1,162 @@
+﻿@model IEnumerable<airlines.Models.BookingViewModell>
+
+@{
+    ViewData["Title"] = "Booking Analytics";
+    Layout = "~/Views/Shared/_Layout1(admin).cshtml";
+}
+
+<!-- Page Header -->
+<h1 class="text-center text-danger font-weight-bold my-4">Booking Analytics Overview</h1>
+
+<!-- Chart Containers -->
+<div class="container mb-5">
+    <div class="row">
+        <!-- Booking Status Pie Chart -->
+        <div class="col-lg-7 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white font-weight-bold">
+                    Booking Status Distribution
+                </div>
+                <div class="card-body">
+                    <ul class="list-inline text-center mb-3">
+                        <li class="list-inline-item"><i class="fa fa-circle text-success mr-1"></i>Confirmed</li>
+                        <li class="list-inline-item"><i class="fa fa-circle text-warning mr-1"></i>Blocked</li>
+                        <li class="list-inline-item"><i class="fa fa-circle text-danger mr-1"></i>Cancelled</li>
+                    </ul>
+                    <div style="height: 300px;">
+                        <canvas id="chart1"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Revenue Bar Chart -->
+        <div class="col-lg-5 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white font-weight-bold">
+                    Revenue per Booking
+                </div>
+                <div class="card-body">
+                    <div style="height: 300px;">
+                        <canvas id="chart2"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var bookingData = @Html.Raw(Json.Serialize(Model));
+
+        // Counters for pie chart
+        let bookingStatus = {
+            Confirmed: 0,
+            Blocked: 0,
+            Cancelled: 0
+        };
+
+        // Data for bar chart
+        let bookingLabels = [];
+        let bookingPrices = [];
+
+        bookingData.forEach(function (booking) {
+            switch (booking.Status) {
+                case "Confirmed": bookingStatus.Confirmed++; break;
+                case "Blocked": bookingStatus.Blocked++; break;
+                case "Cancelled": bookingStatus.Cancelled++; break;
+            }
+
+            bookingLabels.push("ID " + booking.ReservationId);
+            bookingPrices.push(booking.TotalPrice);
+        });
+
+        // Pie Chart - Booking Status
+        new Chart(document.getElementById('chart1'), {
+            type: 'pie',
+            data: {
+                labels: ['Confirmed', 'Blocked', 'Cancelled'],
+                datasets: [{
+                    data: [bookingStatus.Confirmed, bookingStatus.Blocked, bookingStatus.Cancelled],
+                    backgroundColor: ['#28a745', '#ffc107', '#dc3545']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: {
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                let label = context.label || '';
+                                let value = context.raw || 0;
+                                return `${label}: ${value} bookings`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Bar Chart - Revenue per Booking
+        new Chart(document.getElementById('chart2'), {
+            type: 'bar',
+            data: {
+                labels: bookingLabels,
+                datasets: [{
+                    label: 'Total Price (Rs)',
+                    data: bookingPrices,
+                    backgroundColor: '#D72638',
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                return `Rs. ${context.raw}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            font: { weight: 'bold' }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Revenue (Rs)',
+                            font: { weight: 'bold' }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: { weight: 'bold' }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Reservation ID',
+                            font: { weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>

@@ -1,0 +1,813 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /*--------------------------------------------------------------
+# Travel Hero Section
+--------------------------------------------------------------*/
+    :root {
+        --background-color: #ffffff; 
+        --default-color: #051e23; 
+        --heading-color: #1c4b56; 
+        --accent-color: #D72638;
+        --surface-color: #ffffff; 
+        --contrast-color: #ffffff; 
+    }
+
+.travel-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 60px 0;
+}
+
+.travel-hero .hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.travel-hero .hero-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.travel-hero .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--background-color), transparent 60%) 0%, color-mix(in srgb, var(--background-color), transparent 80%) 50%, color-mix(in srgb, var(--background-color), transparent 90%) 100%);
+  z-index: 1;
+}
+
+.travel-hero .hero-text .hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.travel-hero .hero-text .hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.travel-hero .hero-text .hero-buttons .btn {
+  padding: 12px 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.travel-hero .hero-text .hero-buttons .btn.btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.travel-hero .hero-text .hero-buttons .btn.btn-primary:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  transform: translateY(-2px);
+}
+
+.travel-hero .hero-text .hero-buttons .btn.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--contrast-color);
+  color: var(--contrast-color);
+}
+
+.travel-hero .hero-text .hero-buttons .btn.btn-outline:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-2px);
+  border-color: var(--accent-color);
+}
+
+.travel-hero .booking-form-wrapper .booking-form {
+  background-color: var(--surface-color);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--default-color), transparent 85%);
+  backdrop-filter: blur(10px);
+}
+
+.travel-hero .booking-form-wrapper .booking-form .form-title {
+  color: var(--heading-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.travel-hero .booking-form-wrapper .booking-form label {
+  color: var(--heading-color);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.travel-hero .booking-form-wrapper .booking-form .form-control,
+.travel-hero .booking-form-wrapper .booking-form .form-select {
+  border: 2px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-size: 14px;
+  color: var(--default-color);
+  background-color: var(--surface-color);
+  transition: all 0.3s ease;
+}
+
+.travel-hero .booking-form-wrapper .booking-form .form-control:focus,
+.travel-hero .booking-form-wrapper .booking-form .form-select:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 75%);
+  outline: none;
+}
+
+.travel-hero .booking-form-wrapper .booking-form .form-control::placeholder,
+.travel-hero .booking-form-wrapper .booking-form .form-select::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+.travel-hero .booking-form-wrapper .booking-form .btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 12px 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.travel-hero .booking-form-wrapper .booking-form .btn-primary:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  transform: translateY(-1px);
+}
+
+
+
+/*--------------------------------------------------------------
+# Why Us Section
+--------------------------------------------------------------*/
+.why-us .content h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.why-us .content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.why-us .stats-row {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+}
+
+.why-us .stat-item span {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-family: var(--heading-font);
+}
+
+.why-us .stat-item .stat-label {
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin-top: 0.25rem;
+}
+
+.why-us .about-image {
+  position: relative;
+}
+
+.why-us .about-image .experience-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.why-us .about-image .experience-badge .experience-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.why-us .about-image .experience-badge .experience-text {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+
+
+}
+
+.why-us .why-choose-section {
+  margin-top: 5rem;
+}
+
+.why-us .why-choose-section h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.why-us .why-choose-section>.row>.col-lg-8>p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+
+}
+
+.why-us .feature-card {
+  background: var(--surface-color);
+  padding: 2.5rem 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.why-us .feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.why-us .feature-card:hover .feature-icon {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.why-us .feature-icon {
+  width: 80px;
+  height: 80px;
+  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+  color: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.why-us .feature-card h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.why-us .feature-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  margin-bottom: 0;
+}
+
+}
+
+/*--------------------------------------------------------------
+# Featured Destinations Section
+--------------------------------------------------------------*/
+.featured-destinations .featured-destination {
+  height: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.featured-destinations .featured-destination:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.featured-destinations .featured-destination .destination-overlay {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.featured-destinations .featured-destination .destination-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.featured-destinations .featured-destination .destination-overlay:hover img {
+  transform: scale(1.08);
+}
+
+.featured-destinations .featured-destination .destination-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: 1;
+}
+
+.featured-destinations .featured-destination .destination-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px;
+  z-index: 2;
+  color: white;
+}
+
+.featured-destinations .featured-destination .destination-info .destination-tag {
+  display: inline-block;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.featured-destinations .featured-destination .destination-info h3 {
+  font-size: 32px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.featured-destinations .featured-destination .destination-info .location {
+  font-size: 16px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.featured-destinations .featured-destination .destination-info .location i {
+  color: var(--accent-color);
+  font-size: 18px;
+}
+
+.featured-destinations .featured-destination .destination-info .description {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.featured-destinations .featured-destination .destination-info .destination-meta {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.featured-destinations .featured-destination .destination-info .destination-meta .tours-count,
+.featured-destinations .featured-destination .destination-info .destination-meta .rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.featured-destinations .featured-destination .destination-info .destination-meta .tours-count i,
+.featured-destinations .featured-destination .destination-info .destination-meta .rating i {
+  color: var(--accent-color);
+}
+
+.featured-destinations .featured-destination .destination-info .price-info {
+  margin-bottom: 25px;
+}
+
+.featured-destinations .featured-destination .destination-info .price-info .starting-from {
+  display: block;
+  font-size: 13px;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.featured-destinations .featured-destination .destination-info .price-info .amount {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent-color);
+}
+
+.featured-destinations .featured-destination .destination-info .explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.featured-destinations .featured-destination .destination-info .explore-btn:hover {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateX(5px);
+}
+
+.featured-destinations .featured-destination .destination-info .explore-btn:hover i {
+  transform: translateX(3px);
+}
+
+.featured-destinations .featured-destination .destination-info .explore-btn i {
+  transition: transform 0.3s ease;
+}
+
+.featured-destinations .compact-destination {
+  background: var(--surface-color);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 180px;
+}
+
+.featured-destinations .compact-destination:hover {
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+  transform: translateX(8px);
+}
+
+.featured-destinations .compact-destination .destination-image {
+  flex-shrink: 0;
+  width: 140px;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-destinations .compact-destination .destination-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.featured-destinations .compact-destination .destination-image .badge-offer {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.featured-destinations .compact-destination .destination-image .badge-offer.limited {
+  background: linear-gradient(135deg, #ffd700, #ffb347);
+  color: #333;
+}
+
+.featured-destinations .compact-destination .destination-details {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.featured-destinations .compact-destination .destination-details h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.featured-destinations .compact-destination .destination-details .location {
+  font-size: 13px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.featured-destinations .compact-destination .destination-details .location i {
+  color: var(--accent-color);
+  font-size: 12px;
+}
+
+.featured-destinations .compact-destination .destination-details .brief {
+  font-size: 13px;
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.featured-destinations .compact-destination .destination-details .stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.featured-destinations .compact-destination .destination-details .stats-row .tour-count,
+.featured-destinations .compact-destination .destination-details .stats-row .rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.featured-destinations .compact-destination .destination-details .stats-row .tour-count i,
+.featured-destinations .compact-destination .destination-details .stats-row .rating i {
+  color: var(--accent-color);
+}
+
+.featured-destinations .compact-destination .destination-details .stats-row .rating i {
+  color: #ffc107;
+}
+
+.featured-destinations .compact-destination .destination-details .stats-row .price {
+  font-weight: 700;
+  color: var(--accent-color);
+  font-size: 14px;
+}
+
+.featured-destinations .compact-destination .destination-details .quick-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.3s ease;
+}
+
+.featured-destinations .compact-destination .destination-details .quick-link:hover {
+  color: color-mix(in srgb, var(--accent-color), black 15%);
+  gap: 8px;
+}
+
+.featured-destinations .compact-destination .destination-details .quick-link i {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.featured-destinations .compact-destination:hover .destination-image img {
+  transform: scale(1.1);
+}
+
+
+}
+
+
+}
+
+
+}
+
+</style>
+<!-- Search Overlay -->
+<div class="search-overlay position-fixed start-0 end-0 top-0 bottom-0 overflow-hidden">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="search-overlay-close">
+                <i class="ph-bold ph-x"></i>
+            </div>
+            <div class="search-overlay-form">
+                <form>
+                    <input type="text" class="input-search bg-transparent p-0 d-block w-100" placeholder="Enter your keywords...">
+                    <button type="submit" class="d-inline-block bg-transparent p-0 border-0">
+                        <i class="ph-bold ph-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Search Overlay -->
+
+<!-- Travel Hero Section -->
+<section id="travel-hero" class="travel-hero section dark-background">
+
+    <div class="hero-background">
+        <video autoplay="" muted="" loop="">
+            <source src="~/User/images/video-3.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container position-relative">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="hero-text" data-aos="fade-up" data-aos-delay="100">
+                    <h1 class="hero-title">Discover the world with Us</h1>
+                    <p class="hero-subtitle">Lorem ipsum dolor sit amet,  do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary me-3">Start Exploring</a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="booking-form-wrapper" data-aos="fade-left" data-aos-delay="200">
+                    <div class="booking-form">
+                        <h3 class="form-title">Plan Your Adventure</h3>
+                        <form action="" class="">
+                            <div class="form-group mb-3">
+                                <label for="destination">Destination</label>
+                                <select name="destination" id="destination" class="form-select" required="">
+                                    <option value="">Choose your destination</option>
+                                    <option value="europe">Europe</option>
+                                    <option value="asia">Asia</option>
+
+                                </select>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label for="checkin">Departure Date</label>
+                                        <input type="date" name="checkin" id="checkin" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label for="checkout">Return Date</label>
+                                        <input type="date" name="checkout" id="checkout" class="form-control" required="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                
+
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100">Find Your Perfect Trip</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section><!-- /Travel Hero Section -->
+<!-- Why Us Section -->
+<section id="why-us" class="why-us section">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- About Us Content -->
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+                <div class="content">
+                    <h3>Explore the World with Confidence</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+                <div class="about-image">
+                    <img src="~/User/images/about/airplane-flying.webp" alt="Travel Experience" class="img-fluid rounded-4">
+                    <div class="experience-badge">
+                        <div class="experience-number">15+</div>
+                        <div class="experience-text">Years of Excellence</div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End About Us Content -->
+        <!-- Why Choose Us -->
+        <div class="why-choose-section">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Why Choose Us for Your Next Adventure</h3>
+                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h4>Local Experts</h4>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h4>Safe &amp; Secure</h4>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-cash"></i>
+                        </div>
+                        <h4>Best Prices</h4>
+                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="350">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <h4>24/7 Support</h4>
+                        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam nisi.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <h4>Global Destinations</h4>
+                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="450">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <h4>Premium Experience</h4>
+                        <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim.</p>
+                    </div>
+                </div>
+            </div><!-- End Features Grid -->
+        </div><!-- End Why Choose Us -->
+
+    </div>
+
+</section>
+
+
+</section><!-- /Featured Destinations Section -->

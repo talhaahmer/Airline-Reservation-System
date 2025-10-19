@@ -1,0 +1,114 @@
+﻿@model airlines.Models.City
+
+@{
+    ViewData["Title"] = "Delete City";
+    Layout = "~/Views/Shared/_Layout1(admin).cshtml";
+}
+
+<style>
+    body {
+        background-color: #f4f6f9;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .delete-container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 35px 40px;
+        border-radius: 14px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .delete-title {
+        text-align: center;
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: #D72638;
+        margin-bottom: 15px;
+    }
+
+    .delete-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 25px;
+    }
+
+    .detail-list dt {
+        font-weight: 600;
+        color: #444;
+        margin-bottom: 8px;
+    }
+
+    .detail-list dd {
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .btn-danger {
+        background-color: #D72638;
+        border: none;
+        color: #fff;
+        font-weight: 600;
+        padding: 12px 28px;
+        font-size: 1rem;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .btn-danger:hover {
+            background-color: #b61f2d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(215, 38, 56, 0.3);
+        }
+
+    .btn-cancel {
+        background-color: #f0f0f0;
+        color: #333;
+        font-weight: 600;
+        padding: 12px 28px;
+        font-size: 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .btn-cancel:hover {
+            background-color: #e2e6ea;
+            color: #000;
+            transform: translateY(-2px);
+        }
+</style>
+
+<div class="delete-container">
+    <h1 class="delete-title">Delete City</h1>
+    <p class="delete-subtitle">Are you sure you want to permanently remove this city from the system?</p>
+
+    <dl class="row detail-list">
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Namee)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Namee)</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Latitude)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Latitude)</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Longitude)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Longitude)</dd>
+    </dl>
+
+    <form asp-action="DeleteCities">
+        <input type="hidden" asp-for="Id" />
+        <div class="btn-container">
+            <input type="submit" value="Delete" class="btn-danger" />
+            <a asp-action="Showcities" class="btn-cancel">Cancel</a>
+        </div>
+    </form>
+</div>

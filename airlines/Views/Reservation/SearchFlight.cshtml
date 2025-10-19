@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewData["Title"] = "SearchFlight";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<airlines.Models.Flight>
+
+<h3>Search Flight by Flight Number</h3>
+
+<form method="get" asp-action="SearchFlight">
+    <div class="form-group">
+        <input type="text" name="flightNumber" class="form-control" placeholder="Enter flight number..." />
+        <button type="submit" class="btn btn-primary mt-2">Search</button>
+    </div>
+</form>
+
+@if (Model.Any())
+{
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>Flight Number</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Departure</th>
+                <th>Arrival</th>
+                <th>Seats</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var flight in Model)
+            {
+                <tr>
+                    <td>@flight.FlightNumber</td>
+                    <td>@flight.OriginCityNavigation?.Namee</td>
+                    <td>@flight.DestinationCityNavigation?.Namee</td>
+                    <td>@flight.DepartureTime?.ToString("dd MMM yyyy hh:mm tt")</td>
+                    <td>@flight.ArrivalTime?.ToString("dd MMM yyyy hh:mm tt")</td>
+                    <td>@flight.AvailableSeats</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else 
+{
+    <p class="text-danger">No flights found.</p>
+}
+
+

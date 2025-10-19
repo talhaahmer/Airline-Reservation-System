@@ -1,0 +1,203 @@
+﻿@model airlines.Models.FlightSearchModel
+
+<style>
+    /* Styling for the flight search section */
+    #flight-search {
+        background-color: #051e23;
+        padding: 40px;
+        border-radius: 12px;
+        color: #fff;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+        max-width: 700px;
+        margin: 20px auto;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+        /* Input styling for text fields */
+        #flight-search form input[type="text"] {
+            background-color: #051e23;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            width: 100%;
+            transition: border-color 0.3s ease;
+        }
+
+            #flight-search form input[type="text"]::placeholder {
+                color: rgba(255, 255, 255, 0.4);
+            }
+
+            #flight-search form input[type="text"]:focus {
+                border-color: #D72638;
+                outline: none;
+                box-shadow: 0 0 5px rgba(215, 38, 56, 0.6);
+            }
+
+        /* Submit button for the form */
+        #flight-search form input[type="submit"],
+        #flight-search button.btn-primary {
+            background-color: #D72638;
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 250px;
+            display: block;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 5px 15px rgba(215, 38, 56, 0.4);
+        }
+
+            #flight-search form input[type="submit"]:hover,
+            #flight-search button.btn-primary:hover {
+                background-color: #b61f2d;
+                box-shadow: 0 8px 20px rgba(215, 38, 56, 0.7);
+                transform: translateY(-2px);
+            }
+
+        /* Main heading styling */
+        #flight-search h3 {
+            color: #fff;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #D72638;
+            padding-bottom: 8px;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* New heading for the section */
+        #flight-search h2 {
+            color: #D72638;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        /* Styling for available flights list */
+        #flight-search ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+            color: #ddd;
+        }
+
+            #flight-search ul li {
+                background: rgba(255,255,255,0.1);
+                margin-bottom: 8px;
+                padding: 10px 15px;
+                border-radius: 8px;
+            }
+
+        /* Table styling for route options */
+        #flight-search table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+            #flight-search table thead {
+                background-color: #0b3a3f;
+            }
+
+            #flight-search table th,
+            #flight-search table td {
+                padding: 12px 15px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            #flight-search table tbody tr:hover {
+                background-color: rgba(215, 38, 56, 0.15);
+            }
+
+        /* Radio button styling */
+        #flight-search input[type="radio"] {
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+</style>
+
+<section id="flight-search">
+    <!-- New heading above search form -->
+    <h2>Find Your Perfect Flight</h2>
+
+    <form asp-action="Search" method="post">
+        <input type="text" name="c1" class="form-control" placeholder="Origin City" />
+        <input type="text" name="c2" class="form-control" placeholder="Destination City" />
+        <input type="submit" value="Search" />
+    </form>
+
+    @if (Model?.Results != null && Model.Results.Any())
+    {
+        <h3>Available Flights:</h3>
+        <ul>
+            @foreach (var item in Model.Results)
+            {
+                <li>@item</li>
+            }
+        </ul>
+    }
+
+    @if (ViewBag.alt1 != null || ViewBag.alt3 != null || ViewBag.direct != null)
+    {
+        <h3>Select a Route</h3>
+
+        <form asp-action="Booking" asp-controller="Reservation" method="post">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Route Type</th>
+                        <th>Flight Path</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (ViewBag.direct != null)
+                    {
+                        <tr>
+                            <td><input type="radio" name="SelectedRouteIds" value="@ViewBag.direct" /></td>
+                            <td>Direct</td>
+                            <td>@ViewBag.data → @ViewBag.data1</td>
+                        </tr>
+                    }
+
+                    @if (ViewBag.alt1 != null && ViewBag.stopover1 != null)
+                    {
+                        <tr>
+                            <td><input type="radio" name="SelectedRouteIds" value="@ViewBag.alt1,@ViewBag.alt2" /></td>
+                            <td>Suggested via Source</td>
+                            <td>@ViewBag.data → @ViewBag.stopover1 → @ViewBag.data1</td>
+                        </tr>
+                    }
+
+                    @if (ViewBag.alt3 != null && ViewBag.stopover2 != null)
+                    {
+                        <tr>
+                            <td><input type="radio" name="SelectedRouteIds" value="@ViewBag.alt3,@ViewBag.alt4" /></td>
+                            <td>Suggested via Destination</td>
+                            <td>@ViewBag.data → @ViewBag.stopover2 → @ViewBag.data1</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <button type="submit" class="btn btn-primary">Continue Booking</button>
+        </form>
+    }
+</section>

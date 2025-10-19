@@ -1,0 +1,362 @@
+﻿@model IEnumerable<airlines.Models.BookingViewModell>
+
+@{
+    ViewData["Title"] = "adminShowBookings";
+    Layout = "~/Views/Shared/_Layout1(admin).cshtml";
+}
+
+<h1 class="text-center text-danger font-weight-bold my-4">My Flight Bookings</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+    /* Table styling */
+    table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px; /* Increased spacing for rows */
+    margin-bottom: 30px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    }
+
+    thead {
+    background-color: #0b3a3f;
+    color: #fff;
+    border-radius: 12px;
+    }
+
+    thead th {
+    border: none !important;
+    font-weight: 700; /* Increased weight for better visibility */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    }
+
+    tbody tr {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    tbody tr:hover {
+    background-color: rgba(215, 38, 56, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slight shadow on hover */
+    }
+
+    td, th {
+    text-align: center;
+    vertical-align: middle !important;
+    padding: 18px 12px; /* More padding for a cleaner look */
+    font-size: 1rem;
+    border: none !important;
+    }
+
+    /* Heading */
+    h1 {
+    letter-spacing: 1.5px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 20px;
+    }
+
+    /* Buttons */
+    .btn {
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
+    }
+
+    .btn-sm {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    }
+
+    .confirm-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    transition: transform 0.2s ease;
+    }
+
+    .confirm-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+    .cancel-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    transition: transform 0.2s ease;
+    }
+
+    .cancel-btn:hover {
+    background-color: #c82333;
+    transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+    /* Modal */
+    .modal-content {
+    background-color: #051e23;
+    color: #eee;
+    border-radius: 12px;
+    padding: 20px;
+    border: none;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Slight shadow */
+    }
+
+    .modal-header {
+    border-bottom: none;
+    justify-content: space-between;
+    padding-bottom: 0;
+    }
+
+    .modal-header .close {
+    color: #eee;
+    font-size: 1.5rem;
+    opacity: 1;
+    }
+
+    .modal-title {
+    font-size: 1.5rem;
+    color: #D72638;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    }
+
+    .form-group label {
+    font-weight: 600;
+    color: #ddd;
+    margin-bottom: 6px;
+    }
+
+    .form-control {
+    background-color: #051e23;
+    color: #eee;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-control::placeholder {
+    color: #aaa;
+    }
+
+    .form-control:focus {
+    border-color: #D72638;
+    outline: none;
+    box-shadow: 0 0 8px rgba(215, 38, 56, 0.7);
+    background-color: #051e23;
+    color: #fff;
+    }
+
+    .modal-footer {
+    border-top: none;
+    padding-top: 15px;
+    justify-content: center;
+    }
+
+    .modal-footer .btn {
+    background-color: #D72638;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    }
+
+    .modal-footer .btn:hover {
+    background-color: #b61f2d;
+    color: #fff;
+    }
+
+
+    body {
+    background: linear-gradient(45deg, #1d3c40, #2c4a4d);
+    font-family: 'Roboto', sans-serif;
+    }
+
+  
+    .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    </style>
+</head>
+<body>
+
+    <div class="container mt-4 mb-5">
+
+        <div class="table-responsive">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th>Reservation ID</th>
+                        <th>Flight Number</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Departure</th>
+                        <th>Arrival</th>
+                        <th>Total Price</th>
+                        <th>Status</th>
+                        <th>Trip Type</th>
+                        <th>Booked On</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.ReservationId</td>
+                            <td>@item.FlightNumber</td>
+                            <td>@item.Origin</td>
+                            <td>@item.Destination</td>
+                            <td>@item.DepartureTime?.ToString("dd MMM yyyy hh:mm tt")</td>
+                            <td>@item.ArrivalTime?.ToString("dd MMM yyyy hh:mm tt")</td>
+                            <td class="text-success font-weight-bold">Rs. @item.TotalPrice</td>
+                            <td>
+                                @if (item.Status == "Confirmed")
+                                {
+                                    <span class="badge badge-success">@item.Status</span>
+                                }
+                                else if (item.Status == "Blocked")
+                                {
+                                    <span class="badge badge-warning text-dark">@item.Status</span>
+                                }
+                                else if (item.Status == "Cancelled")
+                                {
+                                    <span class="badge badge-danger">@item.Status</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-secondary">@item.Status</span>
+                                }
+                            </td>
+                            <td>@item.TripType</td>
+                            <td>@item.ReservationDate?.ToString("dd MMM yyyy")</td>
+                            <td>
+                                @if (item.Status == "Blocked")
+                                {
+                                    <button class="btn btn-success btn-sm confirm-btn" data-resid="@item.ReservationId" title="Confirm Booking">Confirm</button>
+                                    <button class="btn btn-danger btn-sm cancel-btn ml-2" data-id="@item.ReservationId" title="Cancel Booking">Cancel</button>
+                                }
+                                else if (item.Status == "Confirmed")
+                                {
+                                    <button class="btn btn-danger btn-sm cancel-btn" data-id="@item.ReservationId" title="Cancel Booking">Cancel</button>
+                                }
+                                else
+                                {
+                                    <span class="text-muted small">No Actions</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Confirm Modal -->
+        <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <form id="confirmBookingForm">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="confirmModalLabel">Confirm Booking</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" style="color:#eee;">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="hidden" name="ReservationId" id="modalReservationId" />
+
+                            <div class="form-group">
+                                <label for="creditCard">Credit Card Number</label>
+                                <input type="text" id="creditCard" name="CreditCardUsed" class="form-control" placeholder="xxxx-xxxx-xxxx-xxxx" required autocomplete="off" />
+                            </div>
+                            <div class="form-group">
+                                <label for="expiryDate">Expiry Date</label>
+                                <input type="month" id="expiryDate" name="ExpiryDate" class="form-control" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="password" id="cvv" name="CVV" class="form-control" maxlength="4" placeholder="•••" required />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn">Confirm Booking</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+         
+            $('.confirm-btn').on('click', function () {
+                var resId = $(this).data('resid');
+                $('#modalReservationId').val(resId);
+                $('#confirmModal').modal('show');
+            });
+
+       
+            $('#confirmBookingForm').on('submit', function (e) {
+                e.preventDefault();
+
+                var formData = $(this).serialize();
+
+                $.ajax({
+                    url: '/Reservation/ConfirmReservation',
+                    type: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        if (response.success) {
+                            alert(response.message);
+                            location.reload();
+                        } else {
+                            alert("❌ Booking failed: " + response.message);
+                        }
+                    },
+                    error: function () {
+                        alert("❌ Error confirming booking.");
+                    }
+                });
+            });
+
+            $('.cancel-btn').on('click', function () {
+                var id = $(this).data('id');
+                if (confirm("Are you sure you want to cancel this reservation?")) {
+                    $.post('/Reservation/CancelReservation', { id: id }, function (res) {
+                        if (res.success) {
+                            alert("Reservation cancelled.");
+                            location.reload();
+                        } else {
+                            alert("Failed to cancel reservation.");
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

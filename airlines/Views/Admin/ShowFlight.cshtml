@@ -1,0 +1,189 @@
+﻿@model IEnumerable<airlines.Models.Flight>
+
+@{
+    ViewData["Title"] = "Manage Flights";
+    Layout = "~/Views/Shared/_Layout1(admin).cshtml";
+}
+
+<style>
+    body {
+        background-color: #f5f7fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #2c3e50;
+        margin: 40px 0 10px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .styled-hr {
+        width: 80px;
+        height: 4px;
+        background-color: #d72638;
+        border: none;
+        border-radius: 3px;
+        margin: 0 auto 30px;
+    }
+
+    .table-container {
+        max-width: 1200px;
+        margin: 0 auto 60px;
+        background-color: #ffffff;
+        padding: 45px 35px;
+        border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        overflow-x: auto;
+    }
+
+    .create-link {
+        display: block;
+        margin-bottom: 25px;
+        background-color: #d72638;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 1.05rem;
+        padding: 14px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-align: center;
+        box-shadow: 0 6px 18px rgba(215, 38, 56, 0.3);
+    }
+
+        .create-link:hover {
+            background-color: #b61f2d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(215, 38, 56, 0.45);
+        }
+
+    table.table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+        color: #333;
+        min-width: 1000px;
+    }
+
+        table.table th,
+        table.table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #eaeaea;
+            white-space: nowrap;
+        }
+
+        table.table th {
+            background-color: #f1f3f5;
+            font-weight: 700;
+            color: #2d3436;
+        }
+
+        table.table tbody tr:hover {
+            background-color: #f4f6f9;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+    .action-links {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+        .action-links a {
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #ffffff;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: auto;
+        }
+
+            .action-links a.edit {
+                background-color: #1e90ff;
+            }
+
+                .action-links a.edit:hover {
+                    background-color: #0b6edc;
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 20px rgba(11, 110, 220, 0.4);
+                }
+
+            .action-links a.delete {
+                background-color: #e74c3c;
+            }
+
+                .action-links a.delete:hover {
+                    background-color: #c0392b;
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 20px rgba(192, 57, 43, 0.4);
+                }
+
+ 
+
+    .action-links a {
+        width: 100%;
+    }
+
+    table.table {
+        min-width: unset;
+        font-size: 0.9rem;
+    }
+
+    }
+</style>
+
+<h1 class="page-title">Manage Flights</h1>
+<hr class="styled-hr" />
+
+<div class="table-container">
+    <p>
+        <a class="create-link" asp-action="AddFlight">+ Create New Flight</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.First().FlightNumber)</th>
+                <th>@Html.DisplayNameFor(model => model.First().DepartureTime)</th>
+                <th>@Html.DisplayNameFor(model => model.First().ArrivalTime)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Duration)</th>
+                <th>@Html.DisplayNameFor(model => model.First().BasePrice)</th>
+                <th>@Html.DisplayNameFor(model => model.First().AvailableSeats)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Date)</th>
+                <th>@Html.DisplayNameFor(model => model.First().OriginCityNavigation.Namee)</th>
+                <th>@Html.DisplayNameFor(model => model.First().DestinationCityNavigation.Namee)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.FlightNumber)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DepartureTime)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ArrivalTime)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Duration)</td>
+                    <td>@Html.DisplayFor(modelItem => item.BasePrice)</td>
+                    <td>@Html.DisplayFor(modelItem => item.AvailableSeats)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Date)</td>
+                    <td>@Html.DisplayFor(modelItem => item.OriginCityNavigation.Namee)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DestinationCityNavigation.Namee)</td>
+                    <td class="action-links">
+                        <a class="edit" asp-action="EditFlights" asp-route-id="@item.Id">Edit</a>
+                        <a class="delete" asp-action="DeleteFlights" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,162 @@
+﻿@model airlines.Models.City
+
+@{
+    ViewData["Title"] = "Add Cities";
+    Layout = "~/Views/Shared/_Layout1(admin).cshtml";
+}
+
+<style>
+    body {
+        background-color: #eef1f5;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .page-title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #2c3e50;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+    }
+
+    .styled-hr {
+        width: 70px;
+        height: 4px;
+        background-color: #D72638;
+        border: none;
+        border-radius: 3px;
+        margin: 0 auto 35px auto;
+    }
+
+    .form-container {
+        max-width: 550px;
+        margin: 0 auto 50px auto;
+        padding: 35px 40px;
+        background-color: #ffffff;
+        border-radius: 14px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+        .form-group label {
+            font-weight: 600;
+            color: #34495e;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+    .form-control {
+        width: 100%;
+        height: 45px;
+        padding: 10px 14px;
+        font-size: 1rem;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        background-color: #f9fafb;
+        color: #000 !important; 
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+        .form-control:focus {
+            border-color: #D72638;
+            box-shadow: 0 0 0 4px rgba(215, 38, 56, 0.15);
+            outline: none;
+        }
+
+    .btn-custom {
+        width: 100%;
+        padding: 14px;
+        font-size: 1.1rem;
+        background: linear-gradient(135deg, #D72638, #b01c2c);
+        color: #fff;
+        font-weight: 700;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+        .btn-custom:hover {
+            background: linear-gradient(135deg, #c61d2d, #901320);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(215, 38, 56, 0.4);
+        }
+
+    .text-danger {
+        font-size: 0.875rem;
+        color: #dc3545;
+        margin-top: 4px;
+    }
+
+    .back-link {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+        .back-link a {
+            display: inline-block;
+            padding: 12px 22px;
+            background-color: #f8f9fa;
+            color: #D72638;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+            .back-link a:hover {
+                background-color: #f0f0f0;
+                color: #a61c28;
+                transform: translateY(-1px);
+                text-decoration: none;
+            }
+</style>
+
+<!-- Page Header -->
+<h1 class="page-title">Add City</h1>
+<hr class="styled-hr" />
+
+<!-- Form Section -->
+<div class="form-container">
+    <form asp-action="Addcities">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <!-- City Name -->
+        <div class="form-group">
+            <label asp-for="Namee">City Name</label>
+            <input asp-for="Namee" class="form-control" required />
+            <span asp-validation-for="Namee" class="text-danger"></span>
+        </div>
+
+        <!-- Latitude -->
+        <div class="form-group">
+            <label asp-for="Latitude">Latitude</label>
+            <input asp-for="Latitude" class="form-control" required />
+            <span asp-validation-for="Latitude" class="text-danger"></span>
+        </div>
+
+        <!-- Longitude -->
+        <div class="form-group">
+            <label asp-for="Longitude">Longitude</label>
+            <input asp-for="Longitude" class="form-control" required />
+            <span asp-validation-for="Longitude" class="text-danger"></span>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <input type="submit" value="Create City" class="btn-custom" />
+        </div>
+    </form>
+</div>
+
+<!-- Back Link -->
+<div class="back-link">
+    <a asp-action="Index">← Back to City List</a>
+</div>

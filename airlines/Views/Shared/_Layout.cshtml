@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Airline Reservation System</title>
+  
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="~/User/images/favicon2.png">
+    <!-- Link of CSS files -->
+    <link rel="stylesheet" href="~/User/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/User/fonts/regular/style.css">
+    <link rel="stylesheet" href="~/User/fonts/fill/style.css">
+    <link rel="stylesheet" href="~/User/fonts/bold/style.css">
+    <link rel="stylesheet" href="~/User/css/meanmenu.min.css">
+    <link rel="stylesheet" href="~/User/css/scrollCue.css">
+    <link rel="stylesheet" href="~/User/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/User/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/User/css/style.css">
+    <link rel="stylesheet" href="~/User/css/responsive.css">
+    <style>
+
+        .content-wrapper {
+            padding-top: 130px; 
+        }
+.nofa-nav {
+            --background-color: #ffffff; 
+            --default-color: #000000; 
+            --surface-color: #ffffff; 
+  --nav-color: #ffffff;
+  --nav-hover-color: #D72638;
+  --accent-color: #D72638;
+  --nav-font: 'Segoe UI', sans-serif;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 997;
+  background-color: var(--background-color);
+  padding: 15px 0;
+  transition: all 0.5s ease;
+}
+
+.nofa-nav .container {
+  background: var(--surface-color);
+  border-radius: 50px;
+  padding: 5px 30px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar {
+  width: 100%;
+  padding: 0;
+}
+
+.navbar-brand img {
+  max-height: 90px;
+  height: auto;
+  width: auto;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.1));
+  object-fit: contain;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  font-family: var(--nav-font);
+  font-size: 16px;
+  color: var(--nav-color);
+  padding: 12px 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--nav-hover-color);
+}
+
+.others-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.others-option .user-btn,
+.others-option .search-btn a {
+  font-size: 20px;
+  color: var(--default-color);
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.others-option .user-btn:hover,
+.others-option .search-btn a:hover {
+  color: var(--accent-color);
+}
+
+.cart-btn {
+  position: relative;
+  font-size: 20px;
+  color: var(--default-color);
+  text-decoration: none;
+}
+
+.cart-btn span {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background-color: var(--accent-color);
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 11px;
+}
+
+.scrolled .nofa-nav .container {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+        }
+
+
+    </style>
+  
+</head>
+
+
+
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader-area position-fixed start-0 top-0 end-0 bottom-0 text-center">
+        <div class="preloader">
+            <img src="~/User/images/preloader.png" alt="preloader">
+            <div class="waviy fw-bold">
+                <span class="position-relative d-inline-block">A</span>
+                <span class="position-relative d-inline-block">I</span>
+                <span class="position-relative d-inline-block">R</span>
+                <span class="position-relative d-inline-block">L</span>
+                <span class="position-relative d-inline-block">I</span>
+                <span class="position-relative d-inline-block">N</span>
+                <span class="position-relative d-inline-block">E</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Navbar Area -->
+    <div class="navbar-area page-title">
+        <div class="nofa-responsive-nav">
+            <div class="container">
+                <div class="nofa-responsive-menu">
+                    <div class="logo">
+                        <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                            <img src="~/User/images/logo.png" alt="Airline Logo" />
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nofa-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="index.html">
+                         <img src="~/User/images/logo.png" alt="logo">
+                    </a>
+                    <div class="collapse navbar-collapse mean-menu">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a asp-controller="Home" asp-action="Index" class=" nav-link">
+                                    Home
+                                </a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Home" asp-action="About" class="nav-link">
+                                    About Us
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a asp-controller="Reservation" asp-action="Search" class="nav-link">
+                                   Search Destination
+                                </a>
+                            </li>
+                            @if (User.Identity.Name != null)
+                            {
+                            <li class="nav-item">
+                                <a asp-controller="Reservation" asp-action="MyBookings" class="nav-link">
+                                My Booking
+                                </a>
+                            </li>
+                                <li class="nav-item">
+                                    <a asp-controller="cookies" asp-action="Logout" class="nav-link">
+                                        Logout
+                                    </a>
+                                </li>
+                            }
+                            else{
+                            <li class="nav-item">
+                                <a asp-controller="cookies" asp-action="Login" class="nav-link">
+                                    Login
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="cookies" asp-action="registration" class="nav-link">
+                                 Register your Self
+                                </a>
+                            </li>
+
+                      
+                        }
+                        <div class="others-option position-relative d-flex align-items-center">
+                            <div class="option-item">
+                                <a href="contact.html" class="user-btn d-inline-block lh-1">
+                                    <i class="ph-bold ph-user"></i>
+                                </a>
+                            </div>
+                            <div class="option-item d-none">
+                                <a href="#" class="cart-btn position-relative d-inline-block lh-1">
+                                    <i class="ph-bold ph-shopping-cart-simple"></i>
+                                    <span>
+                                        0
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="option-item">
+                                <div class="search-btn d-inline-block lh-1">
+                                    <a asp-controller="Reservation" asp-action="SearchFlight" class="ph-bold ph-magnifying-glass">   Search</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- End Navbar Area -->
+
+
+
+
+    <main class="content-wrapper">
+        @RenderBody()
+    </main>
+    <!-- Start Footer Area -->
+    <footer class="footer-area position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-footer-widget">
+                        <img src="~/User/images/logo white.png" alt="logo" style="height: 190px; width: auto;">
+
+                        <p>
+                            Lorem ipsum dolor sit amet conkndsknvkvsdn iure numquam?
+                        </p>
+                        <div class="socials-link">
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <i class="ph-fill ph-facebook-logo"></i>
+                            </a>
+                            <a href="https://twitter.com/" target="_blank">
+                                <i class="ph-fill ph-twitter-logo"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank">
+                                <i class="ph-fill ph-instagram-logo"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/" target="_blank">
+                                <i class="ph-fill ph-linkedin-logo"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h3>
+                            Explore
+                        </h3>
+                        <ul class="custom-links list-unstyled ps-0 mb-0">
+                            <li>
+                                <a asp-controller="Home" asp-action="About" class="nav-link">
+                                    About Us
+                                </a>
+                            </li>
+
+                            <li>
+                                <a asp-controller="Reservation" asp-action="Search" class="nav-link">
+                                    Destinations
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-controller="Reservation" asp-action="MyBookings" class="nav-link">
+                                   Bookings
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h3>
+                            Links
+                        </h3>
+                        <ul class="custom-links list-unstyled ps-0 mb-0">
+                       
+                            <li>
+                                <a asp-controller="Reservation" asp-action="MyBookings" class="nav-link">
+                                    Contact Us
+                                </a>
+                            </li>
+
+                            <li>
+                                <a asp-controller="Reservation" asp-action="MyBookings" class="nav-link">
+                                    FAQ's
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h3>
+                            Contact Us
+                        </h3>
+                        <ul class="footer-contact-info list-unstyled ps-0 mb-0">
+                            <li class="position-relative">
+                                <i class="ph-bold ph-phone-call"></i>
+                                <a href="tel:+9288006780">
+                                    +92 3456789
+                                </a>
+                            </li>
+                            <li class="position-relative">
+                                <i class="ph-bold ph-envelope-simple"></i>
+                                <a href="mailto:abcp@company.com">
+                                    abc@company.com
+                                </a>
+                            </li>
+                            <li class="position-relative">
+                                <i class="ph-bold ph-map-pin"></i>
+                                <span class="d-block">
+                                    abc Street, New York
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-sm-5 col-md-6">
+                        <p class="text-white">
+                            © Copyright 2025 by <a href="index.html">Airline</a>
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-sm-7 col-md-6">
+                        <ul class="ps-0 mb-0 list-unstyled">
+
+                            <li class="d-inline-block">
+                                <a href="terms-conditions.html">
+                                    Terms and Conditions
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Go Top -->
+    <div class="go-top position-fixed text-center">
+        <i class="ph-bold ph-caret-up"></i>
+    </div>
+
+    <!-- Link of JS files -->
+    <script src="~/User/js/jquery.min.js"></script>
+    <script src="~/User/js/bootstrap.bundle.min.js"></script>
+    <script src="~/User/js/meanmenu.min.js"></script>
+    <script src="~/User/js/owl.carousel.min.js"></script>
+    <script src="~/Userjs/scrollCue.min.js"></script>
+    <script src="~/User/js/main.js"></script>
+    <script>
+  window.addEventListener("scroll", function () {
+    const nav = document.querySelector(".nofa-nav");
+    if (window.scrollY > 50) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+  });
+</script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

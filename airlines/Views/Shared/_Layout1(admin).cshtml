@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Airline Reservation Admin Panel</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="~/User/images/favicon2.png">
+
+    <!-- Stylesheets -->
+    <link href="~/Admin/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <link href="~/Admin/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link href="~/Admin/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Admin/css/animate.css" rel="stylesheet" />
+    <link href="~/Admin/css/icons.css" rel="stylesheet" />
+    <link href="~/Admin/css/sidebar-menu.css" rel="stylesheet" />
+    <link href="~/Admin/css/app-style.css" rel="stylesheet" />
+
+    <style>
+    
+        .logo-icon {
+            max-height: 55px;
+            width: auto;
+        }
+
+        .brand-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 10px;
+            background: #1f2d3d;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo-text {
+            margin-top: 10px;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar-menu li a {
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+            .sidebar-menu li a:hover {
+                background: rgba(255, 255, 255, 0.05);
+            }
+
+
+        .topbar-nav .navbar {
+            background: #16212e;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo-header {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .navbar-nav .nav-link,
+        .navbar-nav .user-profile {
+            font-size: 1rem;
+            color: #fff;
+        }
+
+            .navbar-nav .user-profile i {
+                font-size: 1.9rem;
+                transition: transform 0.2s ease, color 0.3s ease;
+            }
+
+                .navbar-nav .user-profile i:hover {
+                    transform: scale(1.1);
+                    color: #17a2b8;
+                }
+
+        .dropdown-menu-right {
+            min-width: 220px;
+        }
+
+        .dropdown-menu .avatar {
+            width: 50px;
+            height: 50px;
+            background: #17a2b8;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .dropdown-menu .user-title {
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        .dropdown-menu .user-subtitle {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+
+     
+        .dropdown-divider {
+            margin: 0.5rem 0;
+        }
+
+        main.content-wrapper {
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body class="bg-theme bg-theme2">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" data-simplebar>
+            <div class="brand-logo">
+                <a href="#">
+                    <img src="~/User/images/logo white.png" alt="Logo" class="logo-icon" />
+                   
+                </a>
+            </div>
+            <ul class="sidebar-menu do-nicescrol">
+                <li><a asp-controller="Admin" asp-action="Index"><i class="zmdi zmdi-home"></i> <span>Dashboard</span></a></li>
+                <li><a asp-controller="Admin" asp-action="adminShowBookings"><i class="zmdi zmdi-airplane"></i> <span>Conform  Flights</span></a></li>
+                <li><a asp-controller="Admin" asp-action="Showcities"><i class="zmdi zmdi-city"></i> <span>Show Cities</span></a></li>
+                <li><a asp-controller="Admin" asp-action="ShowClasses"><i class="zmdi zmdi-label"></i> <span>Show Classes</span></a></li>
+                <li><a asp-controller="Admin" asp-action="ShowFlight"><i class="zmdi zmdi-airplane"></i> <span>Show Flights</span></a></li>
+                <li><a asp-controller="Admin" asp-action="Addcities"><i class="zmdi zmdi-plus-circle-o-duplicate"></i> <span>Add Cities</span></a></li>
+                <li><a asp-controller="Admin" asp-action="AddClasses"><i class="zmdi zmdi-plus-circle-o-duplicate"></i> <span>Add Classes</span></a></li>
+                <li><a asp-controller="Admin" asp-action="AddFlight"><i class="zmdi zmdi-plus-circle-o-duplicate"></i> <span>Add Flight</span></a></li>
+                <li><a asp-controller="Admin" asp-action="ShowUsers"><i class="zmdi zmdi-accounts-list-alt"></i> <span>Show Users</span></a></li>
+
+            </ul>
+        </div>
+
+        <!-- Topbar -->
+        <header class="topbar-nav">
+            <nav class="navbar navbar-expand fixed-top">
+                <ul class="navbar-nav mr-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link toggle-menu" href="#"><i class="icon-menu"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <h3 class="logo-header ml-2"> Airline Reservation System</h3>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret d-flex align-items-center" data-toggle="dropdown" href="#">
+                            <span class="user-profile d-flex align-items-center">
+                                <i class="zmdi zmdi-account-circle mr-2"></i>
+                                <span class="d-none d-md-inline">Admin</span>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right animated fadeIn">
+                            <div class="dropdown-item user-details">
+                                <div class="media">
+                                    <div class="avatar"><i class="zmdi zmdi-account"></i></div>
+                                    <div class="media-body ml-3">
+                                        <h6 class="user-title">Admin</h6>
+                                        <p class="user-subtitle">admin@example.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a asp-controller="cookies" asp-action="Logout" class="dropdown-item">
+                                <i class="icon-power mr-2"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="content-wrapper mt-4 pt-4">
+            @RenderBody()
+        </main>
+
+        <!-- Overlay -->
+        <div class="overlay toggle-menu"></div>
+
+        <!-- Back To Top Button -->
+        <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+
+    <!-- Scripts -->
+    <script src="~/Admin/js/jquery.min.js"></script>
+    <script src="~/Admin/js/popper.min.js"></script>
+    <script src="~/Admin/js/bootstrap.min.js"></script>
+    <script src="~/Admin/plugins/simplebar/js/simplebar.js"></script>
+    <script src="~/Admin/js/sidebar-menu.js"></script>
+    <script src="~/Admin/js/jquery.loading-indicator.js"></script>
+    <script src="~/Admin/js/app-script.js"></script>
+    <script src="~/Admin/plugins/Chart.js/Chart.min.js"></script>
+    <script src="~/Admin/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\asp\\Desktop\\airlines\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/./airlines/sa/SqlTable/dbo.reservation.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\controllers\\cookies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\controllers\\cookies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\reservation\\mybookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\reservation\\mybookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\reservation\\searchflight.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\reservation\\searchflight.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\cookies\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\cookies\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\cookies\\registration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\cookies\\registration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/./airlines/sa/SqlTable/dbo.login.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/./airlines/sa/SqlTable/dbo.Flight.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\shared\\_layout1(admin).cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\shared\\_layout1(admin).cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\reservation\\confirmbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\reservation\\confirmbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\reservation\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\reservation\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\admin\\showusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\admin\\showusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\admin\\showflight.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\admin\\showflight.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\admin\\adminshowbookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\admin\\adminshowbookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\admin\\addflight.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\admin\\addflight.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\admin\\addclasses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\admin\\addclasses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\admin\\addcities.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\admin\\addcities.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\controllers\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\controllers\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\controllers\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\controllers\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|c:\\users\\asp\\desktop\\airlines\\airlines\\views\\admin\\deletecities.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A354D77-A5B1-4512-9084-310D2F221531}|airlines\\airlines.csproj|solutionrelative:airlines\\views\\admin\\deletecities.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SearchFlight.cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Reservation\\SearchFlight.cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\Reservation\\SearchFlight.cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Reservation\\SearchFlight.cshtml",
+              "RelativeToolTip": "airlines\\Views\\Reservation\\SearchFlight.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-08T04:55:49.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "dbo.reservation [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/./airlines/sa/SqlTable/dbo.reservation.sql",
+              "ToolTip": "dbo.reservation [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-07-08T04:49:40.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\cookies\\Login.cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\cookies\\Login.cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\cookies\\Login.cshtml",
+              "RelativeToolTip": "airlines\\Views\\cookies\\Login.cshtml",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAHcAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T09:17:04.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MyBookings.cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Reservation\\MyBookings.cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\Reservation\\MyBookings.cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Reservation\\MyBookings.cshtml",
+              "RelativeToolTip": "airlines\\Views\\Reservation\\MyBookings.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAPYAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T09:19:54.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "cookies.cs",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Controllers\\cookies.cs",
+              "RelativeDocumentMoniker": "airlines\\Controllers\\cookies.cs",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Controllers\\cookies.cs",
+              "RelativeToolTip": "airlines\\Controllers\\cookies.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAqwGsAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T09:06:37.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "dbo.login [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/./airlines/sa/SqlTable/dbo.login.sql",
+              "ToolTip": "dbo.login [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-07-08T04:29:31.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "dbo.Flight [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/./airlines/sa/SqlTable/dbo.Flight.sql",
+              "ToolTip": "dbo.Flight [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-07-08T04:24:42.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Registration.cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\cookies\\Registration.cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\cookies\\Registration.cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\cookies\\Registration.cshtml",
+              "RelativeToolTip": "airlines\\Views\\cookies\\Registration.cshtml",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAHsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T09:17:40.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_Layout1(admin).cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Shared\\_Layout1(admin).cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\Shared\\_Layout1(admin).cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Shared\\_Layout1(admin).cshtml",
+              "RelativeToolTip": "airlines\\Views\\Shared\\_Layout1(admin).cshtml",
+              "ViewState": "AgIAALoAAAAAAAAAAAAAAL0AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T09:27:02.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ConfirmBooking.cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Reservation\\ConfirmBooking.cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\Reservation\\ConfirmBooking.cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Reservation\\ConfirmBooking.cshtml",
+              "RelativeToolTip": "airlines\\Views\\Reservation\\ConfirmBooking.cshtml",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAACMAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T09:18:25.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Search.cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Reservation\\Search.cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\Reservation\\Search.cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Reservation\\Search.cshtml",
+              "RelativeToolTip": "airlines\\Views\\Reservation\\Search.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T09:18:24.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ShowUsers.cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Admin\\ShowUsers.cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\Admin\\ShowUsers.cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Admin\\ShowUsers.cshtml",
+              "RelativeToolTip": "airlines\\Views\\Admin\\ShowUsers.cshtml",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T09:16:40.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ShowFlight.cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Admin\\ShowFlight.cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\Admin\\ShowFlight.cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Admin\\ShowFlight.cshtml",
+              "RelativeToolTip": "airlines\\Views\\Admin\\ShowFlight.cshtml",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T09:16:10.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "airlines\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T09:15:06.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "adminShowBookings.cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Admin\\adminShowBookings.cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\Admin\\adminShowBookings.cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Admin\\adminShowBookings.cshtml",
+              "RelativeToolTip": "airlines\\Views\\Admin\\adminShowBookings.cshtml",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAAAFcBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T09:14:11.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AddFlight.cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Admin\\AddFlight.cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\Admin\\AddFlight.cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Admin\\AddFlight.cshtml",
+              "RelativeToolTip": "airlines\\Views\\Admin\\AddFlight.cshtml",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T09:13:47.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AddClasses.cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Admin\\AddClasses.cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\Admin\\AddClasses.cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Admin\\AddClasses.cshtml",
+              "RelativeToolTip": "airlines\\Views\\Admin\\AddClasses.cshtml",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T09:13:28.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Addcities.cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Admin\\Addcities.cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\Admin\\Addcities.cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Admin\\Addcities.cshtml",
+              "RelativeToolTip": "airlines\\Views\\Admin\\Addcities.cshtml",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T09:12:58.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Controllers\\Reservation.cs",
+              "RelativeDocumentMoniker": "airlines\\Controllers\\Reservation.cs",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Controllers\\Reservation.cs",
+              "RelativeToolTip": "airlines\\Controllers\\Reservation.cs",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAQwHcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T09:09:47.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Controllers\\Admin.cs",
+              "RelativeDocumentMoniker": "airlines\\Controllers\\Admin.cs",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Controllers\\Admin.cs",
+              "RelativeToolTip": "airlines\\Controllers\\Admin.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAQwFUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T09:03:40.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "airlines\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAIkBAAAAAAAAAAAAAO0AAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T07:23:45.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "airlines\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAACoDAAAAAAAAAAAAACoDAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T07:21:38.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "DeleteCities.cshtml",
+              "DocumentMoniker": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Admin\\DeleteCities.cshtml",
+              "RelativeDocumentMoniker": "airlines\\Views\\Admin\\DeleteCities.cshtml",
+              "ToolTip": "C:\\Users\\asp\\Desktop\\airlines\\airlines\\Views\\Admin\\DeleteCities.cshtml",
+              "RelativeToolTip": "airlines\\Views\\Admin\\DeleteCities.cshtml",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAHAAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-07T07:18:25.57Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

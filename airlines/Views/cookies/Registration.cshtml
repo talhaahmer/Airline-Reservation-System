@@ -1,0 +1,144 @@
+﻿@model airlines.Models.Login
+
+@{
+    ViewData["Title"] = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #register .auth-form-wrapper {
+        background-color: #051e23;
+        color: #fff;
+        border-radius: 12px;
+        padding: 40px 30px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    #register .form-logo {
+        margin-bottom: 20px;
+    }
+
+        #register .form-logo img {
+            max-height: 120px;
+            width: auto;
+        }
+
+    #register .form-title {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 25px;
+        position: relative;
+    }
+
+        #register .form-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #D72638;
+        }
+
+    #register .form-group label {
+        color: #fff;
+        font-weight: 500;
+        text-align: left;
+        display: block;
+    }
+
+    #register .form-control {
+        background-color: #051e23;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-radius: 8px;
+        padding: 12px 15px;
+    }
+
+        #register .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        #register .form-control:focus {
+            border-color: #D72638;
+            box-shadow: 0 0 0 0.2rem rgba(215, 38, 56, 0.3);
+        }
+
+    #register .btn-primary {
+        background-color: #D72638;
+        border: none;
+        color: #fff;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 8px;
+        transition: 0.3s ease;
+        box-shadow: 0 5px 15px rgba(215, 38, 56, 0.4);
+    }
+
+        #register .btn-primary:hover {
+            background-color: #b61f2d;
+            box-shadow: 0 8px 20px rgba(215, 38, 56, 0.5);
+            transform: translateY(-2px);
+        }
+
+    #register .back-link {
+        color: #D72638;
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+        #register .back-link:hover {
+            color: #ff4d5e;
+            text-decoration: underline;
+        }
+</style>
+
+<section id="register" class="auth section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="auth-form-wrapper">
+                
+                    <div class="form-logo">
+                        <img src="~/User/images/logo white.png" alt="Logo" />
+                    </div>
+
+                    <h3 class="form-title">Register</h3>
+
+                    <form asp-action="Registration" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="form-group mb-3 text-start">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" type="email" class="form-control" placeholder="Enter your email" required />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="form-group mb-3 text-start">
+                            <label asp-for="Password"></label>
+                            <input asp-for="Password" type="password" class="form-control" placeholder="Enter your password" required />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <input type="hidden" asp-for="RoleId" value="2" />
+
+                        <div class="form-group mb-3">
+                            <input type="submit" value="Register" class="btn btn-primary w-100" />
+                        </div>
+                    </form>
+
+                    <a asp-controller="Home" asp-action="Index" class="back-link">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
